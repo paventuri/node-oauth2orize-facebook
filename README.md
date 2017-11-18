@@ -1,14 +1,11 @@
 # oauth2orize-facebook
 
-Facebook token exchange middleware for OAuth2 server toolkit [oauth2orize][oauth2orize-url].
-
-Inspired from [oauth2orize][oauth2orize-url]'s built-in exchanger
-[password](https://github.com/jaredhanson/oauth2orize/blob/master/lib/exchange/password.js).
+This is a koa port of [oauth2orize-facebook](https://github.com/ngthanhtrung/node-oauth2orize-facebook).
 
 ## Installation
 
 ```sh
-npm i oauth2orize-facebook -S
+npm i oauth2orize-koa-facebook -S
 ```
 
 ## Usage
@@ -25,8 +22,8 @@ or by adding FB_APP_SECRET={your Facebook app secret} to your .env file.
 Then, you can have fun
 
 ```js
-var oauth2orize = require('oauth2orize');
-var oauth2orizeFacebook = require('oauth2orize-facebook');
+var oauth2orize = require('oauth2orize-koa');
+var oauth2orizeFacebook = require('oauth2orize-koa-facebook');
 
 var server = oauth2orize.createServer();
 
@@ -53,4 +50,4 @@ server.exchange(oauth2orizeFacebook(['email', 'first_name', 'last_name'], functi
 
 MIT licensed.
 
-[oauth2orize-url]: https://www.npmjs.com/package/oauth2orize
+[oauth2orize-koa]: https://www.npmjs.com/package/oauth2orize-koa

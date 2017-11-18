@@ -1,30 +1,55 @@
 {
-  "name": "oauth2orize-facebook",
-  "version": "1.0.1",
-  "description": "Facebook token exchange middleware for OAuth2 server toolkit `oauth2orize`.",
+  "name": "oauth2orize-koa-facebook",
+  "version": "0.0.2",
+  "description": "Facebook token exchange middleware for OAuth2 server toolkit `oauth2orize-koa`.",
   "keywords": [
+    "oauth",
+    "koa",
     "oauth2orize",
+    "oauth2orize-koa",
     "facebook"
   ],
-  "license": "MIT",
-  "author": "Trung Nguyen <i@meo.guru> (http://meo.guru)",
-  "files": [
-    "lib/**/*"
+  "author": {
+    "name": "Paulo Venturi",
+    "email": "paulo.venturi@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/paventuri/node-oauth2orize-facebook.git"
+  },
+  "bugs": {
+    "url": "http://github.com/paventuri/node-oauth2orize-facebook/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/MIT"
+    }
   ],
-  "main": "lib/index.js",
-  "repository": "meoguru/node-oauth2orize-facebook",
-  "scripts": {
-    "test": "eslint lib/"
-  },
+  "main": "./lib",
   "dependencies": {
+    "debug": "2.x.x",
     "dotenv": "^4.0.0",
-    "object-assign": "^2.0.0",
-    "request": "^2.53.0"
-  },
-  "peerDependencies": {
-    "oauth2orize": "^1.0.1"
+    "oauth2orize-koa": "^1.3.2",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
   },
   "devDependencies": {
-    "eslint": "^0.17.1"
+    "babel-cli": "^6.4.5",
+    "babel-eslint": "^4.1.6",
+    "babel-preset-es2015-node5": "^1.1.1",
+    "babel-preset-stage-3": "^6.3.13",
+    "babel-register": "^6.4.3",
+    "chai": "1.x.x",
+    "eslint": "^1.10.3",
+    "mocha": "2.x.x"
+  },
+  "engines": {
+    "node": ">= 0.4.0"
+  },
+  "scripts": {
+    "compile": "node_modules/.bin/babel src --out-dir lib",
+    "version": "node_modules/.bin/babel src --out-dir lib",
+    "postversion": "git push && git push --tags"
   }
 }
