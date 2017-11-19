@@ -43,11 +43,10 @@ exports.exchange = {};
  *
  * Examples:
  *
- *     server.exchange(oauth2orizeFacebook(function(client, profile, scope) {
- *       AccessToken.create(client, profile, scope, function(err, accessToken) {
- *         if (err) { return throw new Error(err); }
- *         return accessToken;
- *       });
+ *     server.exchange(oauth2orizeFacebook.exchange.facebook(function(client, profile, scope) {
+ *       const accessToken = AccessToken.create(client, profile, scope);
+ *       if (err) { return throw new Error(err); }
+ *       return accessToken;
  *     }));
  *
  * @param {Object} options

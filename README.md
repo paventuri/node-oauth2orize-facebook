@@ -27,7 +27,7 @@ var oauth2orizeFacebook = require('oauth2orize-koa-facebook');
 
 var server = oauth2orize.createServer();
 
-server.exchange(oauth2orizeFacebook(['email', 'first_name', 'last_name'], function (client, profile, scope, cb) {
+server.exchange(oauth2orizeFacebook.exchange.facebook(['email', 'first_name', 'last_name'], function (client, profile) {
   // Get access token from client and Facebook profile information.
   var accessToken = 'access token';
 
@@ -41,8 +41,8 @@ server.exchange(oauth2orizeFacebook(['email', 'first_name', 'last_name'], functi
     'glad_to': 'meet you'
   };
 
-  cb(null, accessToken, refreshToken, params);
-  // Or just `cb(null, accessToken);` is enough.
+  return [accessToken, refreshToken, params];
+  // Or just `return accessToken` is enough.
 }));
 ```
 
